@@ -66,13 +66,12 @@ class _LoginViewState extends State<LoginView> {
           ),
         ),
       ),
-    );
+    );  
   }
 
   void valiateThenlogin(BuildContext context) {
     if (context.read<LoginCubit>().formKey.currentState!.validate()) {
-      context.read<LoginCubit>().emailController.text;
-      context.read<LoginCubit>().passwordController.text;
+      context.read<LoginCubit>().emitLoading();
     }
   }
 }
