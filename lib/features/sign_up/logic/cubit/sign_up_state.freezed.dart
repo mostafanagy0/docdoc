@@ -477,20 +477,20 @@ abstract class Success<T> implements SignUpState<T> {
 }
 
 /// @nodoc
-abstract class _$$failureImplCopyWith<T, $Res> {
-  factory _$$failureImplCopyWith(
-          _$failureImpl<T> value, $Res Function(_$failureImpl<T>) then) =
-      __$$failureImplCopyWithImpl<T, $Res>;
+abstract class _$$FailureImplCopyWith<T, $Res> {
+  factory _$$FailureImplCopyWith(
+          _$FailureImpl<T> value, $Res Function(_$FailureImpl<T>) then) =
+      __$$FailureImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({String error});
 }
 
 /// @nodoc
-class __$$failureImplCopyWithImpl<T, $Res>
-    extends _$SignUpStateCopyWithImpl<T, $Res, _$failureImpl<T>>
-    implements _$$failureImplCopyWith<T, $Res> {
-  __$$failureImplCopyWithImpl(
-      _$failureImpl<T> _value, $Res Function(_$failureImpl<T>) _then)
+class __$$FailureImplCopyWithImpl<T, $Res>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$FailureImpl<T>>
+    implements _$$FailureImplCopyWith<T, $Res> {
+  __$$FailureImplCopyWithImpl(
+      _$FailureImpl<T> _value, $Res Function(_$FailureImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of SignUpState
@@ -500,7 +500,7 @@ class __$$failureImplCopyWithImpl<T, $Res>
   $Res call({
     Object? error = null,
   }) {
-    return _then(_$failureImpl<T>(
+    return _then(_$FailureImpl<T>(
       error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -511,8 +511,8 @@ class __$$failureImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$failureImpl<T> implements Failure<T> {
-  const _$failureImpl({required this.error});
+class _$FailureImpl<T> implements Failure<T> {
+  const _$FailureImpl({required this.error});
 
   @override
   final String error;
@@ -526,7 +526,7 @@ class _$failureImpl<T> implements Failure<T> {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$failureImpl<T> &&
+            other is _$FailureImpl<T> &&
             (identical(other.error, error) || other.error == error));
   }
 
@@ -538,8 +538,8 @@ class _$failureImpl<T> implements Failure<T> {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$failureImplCopyWith<T, _$failureImpl<T>> get copyWith =>
-      __$$failureImplCopyWithImpl<T, _$failureImpl<T>>(this, _$identity);
+  _$$FailureImplCopyWith<T, _$FailureImpl<T>> get copyWith =>
+      __$$FailureImplCopyWithImpl<T, _$FailureImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -617,13 +617,13 @@ class _$failureImpl<T> implements Failure<T> {
 }
 
 abstract class Failure<T> implements SignUpState<T> {
-  const factory Failure({required final String error}) = _$failureImpl<T>;
+  const factory Failure({required final String error}) = _$FailureImpl<T>;
 
   String get error;
 
   /// Create a copy of SignUpState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$failureImplCopyWith<T, _$failureImpl<T>> get copyWith =>
+  _$$FailureImplCopyWith<T, _$FailureImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
