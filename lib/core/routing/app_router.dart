@@ -1,5 +1,6 @@
 import 'package:docdoc/core/di/dependancy_ingection.dart';
 import 'package:docdoc/core/routing/routes.dart';
+import 'package:docdoc/features/home/logic/cubit/specializations_cubit.dart';
 import 'package:docdoc/features/home/ui/views/home_view.dart';
 import 'package:docdoc/features/login/logic/cubit/login_cubit.dart';
 import 'package:docdoc/features/login/ui/views/login_view.dart';
@@ -26,7 +27,11 @@ class AppRouter {
       //Home
 
       case Routes.homeview:
-        return MaterialPageRoute(builder: (_) => const HomeView());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => SpecializationsCubit(getIt()),  
+                  child: const HomeView(),
+                ));
 
       // Signup
       case Routes.signupView:
