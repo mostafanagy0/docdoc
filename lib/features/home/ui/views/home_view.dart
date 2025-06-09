@@ -1,6 +1,9 @@
+import 'package:docdoc/core/helpers/spacing.dart';
 import 'package:docdoc/features/home/ui/widgets/doctors_blue_container.dart';
 import 'package:docdoc/features/home/ui/widgets/doctors_speciality_see_all.dart';
+import 'package:docdoc/features/home/ui/widgets/doctros_bloc_builder.dart';
 import 'package:docdoc/features/home/ui/widgets/home_tap_bar.dart';
+import 'package:docdoc/features/home/ui/widgets/specializations_bloc_builder.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -24,18 +27,12 @@ class HomeView extends StatelessWidget {
             children: [
               const HomeTopBar(),
               const DoctorsBlueContainer(),
-              SizedBox(
-                height: 24,
-              ),
-
+              SizedBox(height: 24),
               const DoctorsSpecialitySeeAll(),
-              SizedBox(
-                height: 18, 
-              ),
-
-              // const SpecializationsBlocBuilder(),
-              // verticalSpace(8),
-              // const DoctorsBlocBuilder(),
+              SizedBox(height: 18),
+              const SpecializationsBlocBuilder(),
+              verticalSpace(8),
+              const DoctorsBlocBuilder(),
             ],
           ),
         ),

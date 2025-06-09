@@ -29,6 +29,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   build_runner: ^2.4.6
+  cached_network_image: ^3.4.1
   cupertino_icons: ^1.0.8
   dio: ^5.4.0
   firebase_core: ^3.13.0
@@ -37,6 +38,7 @@ dependencies:
   flutter_bloc: ^9.0.0
   flutter_native_splash: ^2.4.4
   flutter_screenutil: ^5.9.3
+  flutter_secure_storage: ^9.2.4
   flutter_svg: ^2.0.17
   freezed: ^2.5.7
   freezed_annotation: ^2.4.4
@@ -46,6 +48,8 @@ dependencies:
   pretty_dio_logger: ^1.4.0
   retrofit: ^4.4.2
   retrofit_generator: ^9.1.5
+  shared_preferences: ^2.5.3
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_lints: ^5.0.0

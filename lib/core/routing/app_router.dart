@@ -1,6 +1,6 @@
 import 'package:docdoc/core/di/dependancy_ingection.dart';
 import 'package:docdoc/core/routing/routes.dart';
-import 'package:docdoc/features/home/logic/cubit/specializations_cubit.dart';
+import 'package:docdoc/features/home/logic/cubit/Home_cubit.dart';
 import 'package:docdoc/features/home/ui/views/home_view.dart';
 import 'package:docdoc/features/login/logic/cubit/login_cubit.dart';
 import 'package:docdoc/features/login/ui/views/login_view.dart';
@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRouter {
-  Route generateRoute(RouteSettings settings) {
+  Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.onboarding:
         return MaterialPageRoute(builder: (_) => const OnbordingView());
@@ -29,7 +29,7 @@ class AppRouter {
       case Routes.homeview:
         return MaterialPageRoute(
             builder: (_) => BlocProvider(
-                  create: (context) => SpecializationsCubit(getIt()),  
+                  create: (context) => HomeCubit(getIt())..getSpecializations(),
                   child: const HomeView(),
                 ));
 
@@ -42,12 +42,7 @@ class AppRouter {
                 ));
 
       default:
-        return MaterialPageRoute(
-            builder: (_) => Scaffold(
-                  body: Center(
-                    child: Text('No route defined for ${settings.name}'),
-                  ),
-                ));
+        return null;
     }
   }
 }
