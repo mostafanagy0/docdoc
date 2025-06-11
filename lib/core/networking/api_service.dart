@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:docdoc/core/networking/api_constants.dart';
 import 'package:docdoc/features/home/data/models/specializations_response_model.dart';
 import 'package:docdoc/features/login/data/models/login_response_body.dart';
+import 'package:docdoc/features/search/data/models/search_response_model.dart';
 import 'package:docdoc/features/sign_up/data/models/sign_up_request_body.dart';
 import 'package:docdoc/features/sign_up/data/models/sign_up_response_body.dart';
 import 'package:retrofit/error_logger.dart';
@@ -26,4 +27,10 @@ abstract class ApiService {
 
   @GET(ApiConstants.specializations)
   Future<SpecializationsResponseModel> getSpecializations();
+
+  // Search doctors by name
+  @GET(ApiConstants.searchDoctorByName)
+  Future<SearchResponseModel> searchDoctorsByName(
+    @Query('search') String name,
+  );
 }
