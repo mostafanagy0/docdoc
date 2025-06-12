@@ -6,7 +6,6 @@ import 'package:docdoc/features/login/ui/views/login_view.dart';
 import 'package:docdoc/features/login/ui/views/main_screen.dart';
 import 'package:docdoc/features/onbording/onbording_view.dart';
 import 'package:docdoc/features/profile/ui/views/profile_view.dart';
-import 'package:docdoc/features/search/logic/cubit/search_cubit.dart';
 import 'package:docdoc/features/search/ui/views/search_view.dart';
 import 'package:docdoc/features/sign_up/logic/cubit/sign_up_cubit.dart';
 import 'package:docdoc/features/sign_up/ui/presentation/sign_up_view.dart';
@@ -35,13 +34,9 @@ class AppRouter {
       // Profile
       case Routes.profileView:
         return MaterialPageRoute(builder: (_) => const ProfileView());
-      // Profile
+      // search
       case Routes.searchView:
-        return MaterialPageRoute(
-            builder: (_) => BlocProvider(
-                  create: (context) => SearchCubit(getIt()),
-                  child: const SearchView(),
-                ));
+        return MaterialPageRoute(builder: (_) => const SearchView());
       // Main Screen
       case Routes.mainScreen:
         return MaterialPageRoute(builder: (_) => const MainScreen());

@@ -2,22 +2,26 @@ import 'package:docdoc/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomSearchField extends StatelessWidget {
-  const CustomSearchField({super.key});
+  final ValueChanged<String>? onChanged;
+
+  const CustomSearchField({super.key, this.onChanged});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       child: TextField(
+        onChanged: onChanged,
         decoration: InputDecoration(
           hintText: 'search here...',
           hintStyle: TextStyles.font12GrayMedium,
-          prefixIcon: Icon(Icons.search),
+          prefixIcon: const Icon(Icons.search),
           border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(28),
-              borderSide: BorderSide.none),
+            borderRadius: BorderRadius.circular(28),
+            borderSide: BorderSide.none,
+          ),
           filled: true,
-          fillColor: Color(0xFFF2F4F7),
+          fillColor: const Color(0xFFF2F4F7),
         ),
       ),
     );

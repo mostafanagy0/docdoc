@@ -31,6 +31,6 @@ abstract class ApiService {
   // Search doctors by name
   @GET(ApiConstants.searchDoctorByName)
   Future<SearchResponseModel> searchDoctorsByName(
-    @Query('search') String name,
+    @Query('name') String name,
   );
 }

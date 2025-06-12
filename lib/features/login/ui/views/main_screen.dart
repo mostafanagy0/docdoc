@@ -4,6 +4,7 @@ import 'package:docdoc/features/home/logic/cubit/Home_cubit.dart';
 import 'package:docdoc/features/home/ui/views/home_view.dart';
 import 'package:docdoc/features/home/ui/widgets/custom_bottom_navigation_bar.dart';
 import 'package:docdoc/features/profile/ui/views/profile_view.dart';
+import 'package:docdoc/features/search/logic/cubit/search_cubit.dart';
 import 'package:docdoc/features/search/ui/views/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,7 +26,10 @@ class _MainScreenState extends State<MainScreen> {
       create: (context) => HomeCubit(getIt())..getSpecializations(),
       child: const HomeView(),
     ),
-    const SearchView(),
+    BlocProvider(
+      create: (context) => SearchCubit(getIt()),
+      child: const SearchView(),
+    ),
     const ProfileView(),
   ];
 
@@ -49,6 +53,7 @@ class _MainScreenState extends State<MainScreen> {
       ),
       // FloatingActionButton to navigate to the Search screen
       floatingActionButton: FloatingActionButton(
+        shape: const CircleBorder(),
         onPressed: () => _onNavTapped(1),
         backgroundColor: AppColor.mainBlue, // navigate to Search
         child: SvgPicture.asset('assets/svgs/search-normal.svg'),
