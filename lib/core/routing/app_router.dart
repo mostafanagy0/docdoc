@@ -3,7 +3,7 @@ import 'package:docdoc/core/routing/routes.dart';
 import 'package:docdoc/features/home/ui/views/home_view.dart';
 import 'package:docdoc/features/login/logic/cubit/login_cubit.dart';
 import 'package:docdoc/features/login/ui/views/login_view.dart';
-import 'package:docdoc/features/login/ui/views/main_screen.dart';
+import 'package:docdoc/features/home/ui/views/main_screen.dart';
 import 'package:docdoc/features/onbording/onbording_view.dart';
 import 'package:docdoc/features/profile/ui/views/profile_view.dart';
 import 'package:docdoc/features/search/ui/views/search_view.dart';

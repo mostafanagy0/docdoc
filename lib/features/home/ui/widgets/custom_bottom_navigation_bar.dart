@@ -36,7 +36,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
           label: '',
         ),
         //enpty item for spacing
-        const BottomNavigationBarItem(
+        BottomNavigationBarItem(
           icon: SizedBox.shrink(),
           label: '',
         ),
