@@ -15,7 +15,7 @@ class SearchDoctorListView extends StatelessWidget {
       itemCount: doctors.length,
       separatorBuilder: (_, __) => SizedBox(height: 12.h),
       itemBuilder: (context, index) {
-        return DoctorsListViewItem(doctorsModel: doctors[index]);
+        return DoctorsListViewItem(doctors: doctors[index]);
       },
     );
   }

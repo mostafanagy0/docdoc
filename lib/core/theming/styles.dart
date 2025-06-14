@@ -1,5 +1,5 @@
-import 'package:docdoc/core/theming/colors.dart';
 import 'package:docdoc/core/helpers/font_weigth_helper.dart';
+import 'package:docdoc/core/theming/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -111,6 +111,16 @@ class TextStyles {
     fontWeight: FontWeightHelper.medium,
     color: Colors.white,
   );
+  static TextStyle font18W600black = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w600,
+    color: Colors.black,
+  );
+  static TextStyle font16W700black = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w700,
+    color: Colors.black,
+  );
 
   static TextStyle font14BlueSemiBold = TextStyle(
     fontSize: 14.sp,
@@ -140,5 +150,20 @@ class TextStyles {
     fontSize: 18.sp,
     fontWeight: FontWeightHelper.medium,
     color: Colors.white,
+  );
+
+  static TextStyle font16DarkTextSemiBold = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: const Color(0xFF242424),
+    height: 1.20,
+  );
+
+  static TextStyle font14GrayParagraph = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: const Color(0xFF757575),
+    height: 1.80,
+    letterSpacing: 0.20,
   );
 }

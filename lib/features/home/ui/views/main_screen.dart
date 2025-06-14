@@ -42,26 +42,24 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: IndexedStack(
-          index: _currentIndex,
-          children: _screens,
-        ),
-        bottomNavigationBar: CustomBottomNavigationBar(
-          currentIndex: _currentIndex,
-          onTap: _onNavTapped,
-        ),
-        // FloatingActionButton to navigate to the Search screen
-        floatingActionButton: FloatingActionButton(
-          shape: const CircleBorder(),
-          onPressed: () => _onNavTapped(1),
-          backgroundColor: AppColor.mainBlue, // navigate to Search
-          child: SvgPicture.asset('assets/svgs/search-normal.svg'),
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: IndexedStack(
+        index: _currentIndex,
+        children: _screens,
       ),
+      bottomNavigationBar: CustomBottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: _onNavTapped,
+      ),
+      // FloatingActionButton to navigate to the Search screen
+      floatingActionButton: FloatingActionButton(
+        shape: const CircleBorder(),
+        onPressed: () => _onNavTapped(1),
+        backgroundColor: AppColor.mainBlue, // navigate to Search
+        child: SvgPicture.asset('assets/svgs/search-normal.svg'),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
